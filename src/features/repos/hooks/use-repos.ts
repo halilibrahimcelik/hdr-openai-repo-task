@@ -18,6 +18,6 @@ export const useRepos = (initialData: IGithubRepo[]) => {
       return repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
     },
     initialData,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 10 * 60 * 1000,
   });
 };

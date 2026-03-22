@@ -44,7 +44,7 @@ export const RepoCard = ({ repo }: IRepoCardProps) => {
     : null;
 
   return (
-    <Card className="group rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20">
+    <Card className="group rounded-xl h-full border border-border/50 bg-card/50 backdrop-blur-sm shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 hover:border-primary/20">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <a
