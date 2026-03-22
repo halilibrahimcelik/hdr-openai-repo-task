@@ -6,13 +6,17 @@ import type { IGithubRepo } from "@/lib/github";
 export const useRepos = (initialData: IGithubRepo[]) => {
   return useQuery({
     queryKey: ["repos", "openai"],
-    queryFn: () =>
-      fetch(
-        `${process.env.NEXT_PUBLIC_GITHUB_API_URL}/users/openai/repos?sort=`,
-      ).then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch repositories");
-        return res.json();
-      }),
+    queryFn: async () => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_GITHUB_API_URL}/users/openai/repos?per_page=100`,
+      );
+
+      if (!res.ok) throw new Error("Failed to fetch repositories");
+
+      const repos: IGithubRepo[] = await res.json();
+
+      return repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+    },
     initialData,
     staleTime: 5 * 60 * 1000,
   });
