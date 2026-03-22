@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRepos } from "@/hooks/use-repos";
+import { useRepos } from "@/features/repos/hooks/use-repos";
 import { SearchInput } from "./search-input";
 import { RepoCardGrid } from "./repo-card-grid";
 import { SkeletonGrid } from "./repo-card-skeleton";

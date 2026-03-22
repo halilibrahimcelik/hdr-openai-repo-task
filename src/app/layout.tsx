@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
-import { QueryProvider } from "@/app/providers/query-provider"
+import { QueryProvider } from "@/providers/query-provider"
 import "./globals.css"
 
 const jetbrainsMono = JetBrains_Mono({
